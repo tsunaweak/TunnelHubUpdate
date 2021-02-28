@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="css/icon.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TunnelHub</title>
+  </head>
+
+  <body>
+    <div id="particles-js"></div>
+
+    <!-- NAVBAR END -->
+
+    <!-- Main View -->
+
+    <div class="rcd-center-login">
+      <div class="rcd-container rcd-shorter-container">
+        <div class="row">
+        <!-- CHANGE THIS -->
+        <div class="col s12">
+          <p class="center rcd-no-margin">
+            <i class="material-icons large rcd-gradient-text">
+              security
+            </i>
+          </p>
+          <h5 class="center rcd-login-title rcd-black-text rcd-no-margin">
+            Login to TunnelHub
+          </h5>
+        </div>
+        <div class="col s12">
+          <div class="rcd-forms">
+            <div class="rcd-form-container">
+              <input type="hidden" name="action" value="login">
+              <input onkeypress="handleLoginEvent('press', event)" class="browser-default" placeholder="username" type="text" autocomplete="off" name="uname"
+                id="uname">
+              <span class="rcd-label">Username</span>
+            </div>
+            <div class="rcd-form-container">
+              <input onkeypress="handleLoginEvent('press', event)" class="browser-default" placeholder="*******" type="password" autocomplete="off" name="pword"
+              id="pword">
+              <span class="rcd-label">Password</span>
+            </div>
+            <br>
+            <DIV class="row">
+              <div class="col s12">
+                <button onclick="handleLoginEvent('click', event)"  type="submit" class="btn btn-large rcd-btns rcd-red rcd-secondary-btn white-text waves-effect waves-dark z-depth-0">LOGIN</button>
+                <p class="rcd-no-margin center">
+                  <a href="#!" onclick="$('#modal1').modal('open')" class="rcd-need-help">Need Help?</a>
+                </p>
+              </div>
+            </DIV>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main View END -->
+
+
+    <!-- CHANGE ADMIN USER MODAL -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="rcd-modal-bg"></div>
+        <div class="container">
+          <p class="center rcd-no-margin">
+            <button class="btn btn-large btn-floating z-depth-0 rcd-change-logo">
+              <i class="material-icons">help</i>
+            </button>
+          </p>
+          <h5 class="rcd-modal-title rcd-no-margin">
+            TunnelHub
+          </h5>
+          <br>
+              <div class="guide-section rcd-no-margin">
+                <p>TunnelHub is a tool that allows your router to route all the traffic into VPN (Virtual Private Network. To get started, please login to the dashboard. If you are first timer, the default login are below</p>
+                <p>User: <code>admin</code>
+                <br>Password: <code>admin</code></p>
+              </div>
+
+              <div class="col s6">
+                <button class="btn rcd-btns modal-close rcd-black rcd-secondary-btn white-text waves-effect waves-dark z-depth-0">CANCEL</button>
+              </div>
+      </div>
+    </div>
+    <!-- USER MODAL END -->
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/particles.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/ajax-files.js"></script>
+
+    <!-- GLOBAL CSS Variables -->
+    <style type="text/css">
+      :root {
+        --rcd-green: #99B998;
+        --rcd-red: #F4837D;
+        --rcd-black: #27363B;
+      }
+    </style>
+
+    <script type="text/javascript">
+      url_string = window.location.href;
+      var url = new URL(url_string);
+      var c = url.searchParams.get("error");
+      if (c == "1") {
+        show_popup('Incorrect User Details', 'warning');
+      }
+    </script>
+  </body>
+</html>
